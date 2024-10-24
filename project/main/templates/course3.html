@@ -120,7 +120,11 @@
       <div class=" container d-flex justify-content-around">
         <div id="id_manger" class="fs-1 fw-bold p-2 bd-highlight">Id : <span>{{ user.id }}</span></div>
         <div class=" fs-1 fw-bold p-2 bd-highlight text-capitalize">{{ user.username }}</div>
-        <div class=" fs-1 fw-bold p-2 bd-highlight text-capitalize">{{ manger }}</div>
+        {% if manger == 0 %}
+            <div class=" fs-1 fw-bold p-2 bd-highlight text-capitalize">Employee</div>
+          {% else %}
+            <div class=" fs-1 fw-bold p-2 bd-highlight text-capitalize">Manger</div>
+          {% endif %}
       </div>
 
       <div class="container">
