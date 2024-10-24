@@ -10,9 +10,42 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img src="images/12.png" class="rounded-circle" alt="" width="80px"
+                height="60px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link b-lg-3" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link b-lg-3" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link b-lg-3" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link b-lg-3" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav> -->
+
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="#"><span ><i class="bi bi-slack"></i>COU</span>RSES
+          <a class="navbar-brand" href="#home"><img src="../static/images/20.png" alt="" width="50px" height="35px" >
+            <span >COU</span>RSES
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -23,13 +56,14 @@
                 <a class="nav-link" href="{% url 'userhome' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Sections</a>
+                <a class="nav-link" href="#services">Services</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Services</a>
+                <a class="nav-link" href="#coures">coures
+                </a>
               </li>
                <li class="nav-item">
                   {% if user.is_authenticated %}
@@ -60,7 +94,7 @@
                     </style>
 
               
-                    <a class="nav-link"> <button class="profile-button" onclick="toggleDropdown()">{{ user.username }}</button></a>
+                    <a class="nav-link"> <button class="profile-button" onclick="toggleDropdown()" >{{ user.username }}</button></a>
                     <div class="dropdown-menu" id="dropdownMenu">
                         {% if manger %}
                             <a class="dropdown-item" href="{% url 'index' %}">Manager</a>
@@ -97,13 +131,13 @@
         </div>
       </nav>
       <!-- ********************************************** -->
-      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div id="carouselExampleCaptions" class=" carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner ">
           <div class="carousel-item active text-start">
             <img src="../static/images/home3.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-flex flex-column justify-content-center align-items-start text-start" style="top: 50%; transform: translateY(-50%);">
               <h5>إدارة التطوير والتدريب</h5>
-              <span>إدارة التطوير والتدريب في الشركة  تهدف إلى تعزيز مهارات الموظفين وتحفيز الابتكار لضمان التميز في المنتجات. تتولى تحديد الاحتياجات التدريبية وتصميم برامج متخصصة لتطوير القدرات الفنية والإدارية. من مهامها تطوير المهارات القيادية، تشجيع الإبداع، وتقييم الأداء بشكل مستمر. تركز الإدارة أيضًا على تطبيق معايير الجودة والسلامة وتحفيز التعلم المستمر. أهميتها تكمن في زيادة الإنتاجية، تحسين جودة المنتجات، وتقليل التكاليف التشغيلية، مما يعزز قدرة الشركة التنافسية.</span>
+              <span class="fs-5">إدارة التطوير والتدريب في الشركة  تهدف إلى تعزيز مهارات الموظفين وتحفيز الابتكار لضمان التميز في المنتجات. تتولى تحديد الاحتياجات التدريبية وتصميم برامج متخصصة لتطوير القدرات الفنية والإدارية. من مهامها تطوير المهارات القيادية، تشجيع الإبداع، وتقييم الأداء بشكل مستمر. تركز الإدارة أيضًا على تطبيق معايير الجودة والسلامة وتحفيز التعلم المستمر. أهميتها تكمن في زيادة الإنتاجية، تحسين جودة المنتجات، وتقليل التكاليف التشغيلية، مما يعزز قدرة الشركة التنافسية.</span>
                  <!--
                  <span><a href="#" class="btn btn-primary mt-3 btn-lg">more details</a></span>
                  -->
@@ -113,7 +147,7 @@
             <img src="../static/images/home2.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-flex flex-column justify-content-center align-items-center text-center" style="top: 50%; transform: translateY(-50%);">
               <h5>الرؤية</h5>
-              <p>أن تكون إدارة التطوير والتدريب في شركة الحلويات مرجعًا عالميًا للابتكار والتميز في تنمية الكفاءات البشرية، وتقديم حلول تدريبية متقدمة تسهم في تحقيق ريادة الشركة على المستوى العالمي في صناعة الحلويات.
+              <p class="fs-5">أن تكون إدارة التطوير والتدريب في شركة الحلويات مرجعًا عالميًا للابتكار والتميز في تنمية الكفاءات البشرية، وتقديم حلول تدريبية متقدمة تسهم في تحقيق ريادة الشركة على المستوى العالمي في صناعة الحلويات.
 
 الرسالة: نعمل على تطوير وتنمية قدرات موظفي الشركة من خلال توفير برامج تدريبية شاملة ومبتكرة، تركز على تحسين المهارات الفنية والإدارية، وتعزيز الإبداع. نلتزم بتطبيق أعلى معايير الجودة والسلامة، لدعم النمو المستدام للشركة وضمان تقديم منتجات ذات جودة فائقة تلبي احتياجات العملاء وتحافظ على تنافسية الشركة في الأسواق العالمية.</p>
                 <!--
@@ -132,7 +166,7 @@
         </button>
       </div><br><br><br><br>
       <!-- **************************************** -->
-      <section id="sec">
+      <section id="about">
         <div class="container">
         <div class="card mb-3 border-0" style="width: 100%; ">
             <div class="row g-0">
@@ -140,30 +174,24 @@
                      <img src="../static/images/shape1.png" class="img-fluid rounded-start" alt="..." width="100%">
                  </div>
                 <div class="col-md-6 ">
-                    <div class="card-body "  style="margin: 15px;">
-                         <h5 class="card-title fw-bold fs-1">المهام الوظيفية لإدارة التطوير والتدريب:</h5>
-                            <p class="card-text fs-4">1. تحديد الاحتياجات التدريبية: تحليل الفجوات في مهارات الموظفين وتحديد الاحتياجات التدريبية لكل قسم في الشركة.
-
-<br>
-2. تصميم وتنفيذ البرامج التدريبية: إعداد وتقديم برامج تدريبية متخصصة في مجالات مختلفة مثل التصنيع، التسويق، الجودة، وخدمة العملاء.
-
-<br>
-3. تطوير المهارات القيادية: التركيز على تطوير مهارات القيادة والإدارة للفريق الإداري في الشركة لضمان كفاءة إدارة العمليات.
-
-<br>
-4. تحفيز الابتكار والإبداع: تطوير ورش عمل ومبادرات تشجع الموظفين على التفكير الإبداعي والابتكار في تطوير منتجات جديدة تلبي احتياجات السوق.
-<br>
-
-5. تقييم الأداء وتحديد خطط التطوير الشخصي: تقديم أدوات ومنهجيات لتقييم أداء الموظفين وتحديد نقاط القوة والضعف، ووضع خطط لتحسين وتطوير أداء الأفراد.
-
-<br>
-6. الاطلاع على أحدث التقنيات والاتجاهات: متابعة التوجهات العالمية في صناعة الحلويات وتوفير التدريب المتعلق بتلك التقنيات، مما يعزز من تنافسية الشركة في السوق.
-
-<br>
-7. توفير تدريب على الجودة والسلامة: ضمان أن جميع العاملين مدربين على معايير الجودة والسلامة الغذائية لتلبية متطلبات السوق والجهات التنظيمية.
-
-<br>
-8. دعم التطوير المهني المستمر: تشجيع الموظفين على مواصلة التعليم والتعلم المستمر من خلال دورات وشهادات معترف بها دوليًا.</p>
+                    <div class="card-body "  style="margin: 15px; text-align: right;">
+                         <h5 class="card-title fw-bold fs-1" >:المهام الوظيفية لإدارة التطوير والتدريب</h5>
+                            <span class="card-text fs-5">تحديد الاحتياجات التدريبية: تحليل الفجوات في مهارات الموظفين وتحديد الاحتياجات التدريبية لكل قسم في الشركة
+                            </span><br>
+                            <span class="card-text fs-5">تصميم وتنفيذ البرامج التدريبية: إعداد وتقديم برامج تدريبية متخصصة في مجالات مختلفة مثل التصنيع، التسويق، الجودة، وخدمة العملاء
+                            </span><br>
+                            <span class="card-text fs-5">تطوير المهارات القيادية: التركيز على تطوير مهارات القيادة والإدارة للفريق الإداري في الشركة لضمان كفاءة إدارة العمليات
+                            </span><br>
+                            <span class="card-text fs-5">تحفيز الابتكار والإبداع: تطوير ورش عمل ومبادرات تشجع الموظفين على التفكير الإبداعي والابتكار في تطوير منتجات جديدة تلبي احتياجات السوق
+                            </span><br>
+                            <span class="card-text fs-5">تقييم الأداء وتحديد خطط التطوير الشخصي: تقديم أدوات ومنهجيات لتقييم أداء الموظفين وتحديد نقاط القوة والضعف، ووضع خطط لتحسين وتطوير أداء الأفراد
+                            </span><br>
+                            <span class="card-text fs-5">الاطلاع على أحدث التقنيات والاتجاهات: متابعة التوجهات العالمية في صناعة الحلويات وتوفير التدريب المتعلق بتلك التقنيات، مما يعزز من تنافسية الشركة في السوق
+                            </span><br>
+                            <span class="card-text fs-5">توفير تدريب على الجودة والسلامة: ضمان أن جميع العاملين مدربين على معايير الجودة والسلامة الغذائية لتلبية متطلبات السوق والجهات التنظيمية
+                            </span><br>
+                            <span class="card-text fs-5">دعم التطوير المهني المستمر: تشجيع الموظفين على مواصلة التعليم والتعلم المستمر من خلال دورات وشهادات معترف بها دوليًا
+                            </span><br>
                              <p class="btu3"><button type="button">Know more future</button></p>
                      </div>
               </div>
@@ -174,35 +202,35 @@
         <!-- ****************************** -->
         <section id="services" class="services section-padding bg">
           <div class="container">
-              <p class="fs-1 fw-bold text-center">قدرة وأهمية الإدارة:</p>
+              <p class="fs-1 fw-bold text-center">:قدرة وأهمية الإدارة</p>
       <div class="row row-cols-1 row-cols-md-3 g-4">
           <div class="col ">
             <div class="card h-100 border-0">
               <div class="d-flex"> <img src="../static/images/task.png" >
-                  <h5 class="card-title fs-3 fw-bold">تعزيز الإنتاجية:</h5>
+                  <h5 class="card-title fs-3 fw-bold">:تعزيز الإنتاجية</h5>
               </div>
               <div class="card-body">
-                  <p class="card-text">تحسين مهارات الموظفين يساهم في زيادة الإنتاجية وجودة المنتجات، مما يؤدي إلى تحسين الكفاءة التشغيلية.</p>
+                  <p class="card-text fs-5">تحسين مهارات الموظفين يساهم في زيادة الإنتاجية وجودة المنتجات، مما يؤدي إلى تحسين الكفاءة التشغيلية.</p>
               </div>
             </div>
           </div>
           <div class="col ">
               <div class="card h-100 border-0">
                 <div class="d-flex"><img src="../static/images/book.png" alt="" >
-                    <h5 class="card-title fs-3 fw-bold">تحقيق رضا العملاء:</h5>
+                    <h5 class="card-title fs-3 fw-bold">:تحقيق رضا العملاء</h5>
                     </div>
                   <div class="card-body">
-                    <p class="card-text">عندما يكون الموظفون أكثر كفاءة، تكون الشركة أكثر قدرة على تقديم منتجات مبتكرة وذات جودة عالية، مما يزيد من رضا العملاء وولائهم.</p>
+                    <p class="card-text fs-5">عندما يكون الموظفون أكثر كفاءة، تكون الشركة أكثر قدرة على تقديم منتجات مبتكرة وذات جودة عالية، مما يزيد من رضا العملاء وولائهم.</p>
                 </div>
               </div>
             </div>
           <div class="col ">
             <div class="card h-100 border-0">
               <div class="d-flex"><img src="../static/images/books.png" alt="">
-                 <h5 class="card-title fs-3 fw-bold">زيادة القدرة التنافسية:</h5>
+                 <h5 class="card-title fs-3 fw-bold">:زيادة القدرة التنافسية</h5>
               </div>
               <div class="card-body">
-                  <p class="card-text">التدريب المستمر للموظفين على أحدث التقنيات والتوجهات في صناعة الحلويات يجعل الشركة أكثر قدرة على المنافسة في الأسواق العالمية.</p>
+                  <p class="card-text fs-5">التدريب المستمر للموظفين على أحدث التقنيات والتوجهات في صناعة الحلويات يجعل الشركة أكثر قدرة على المنافسة في الأسواق العالمية.</p>
               </div>
             </div>
           </div>
@@ -212,7 +240,7 @@
     <!-- ************************************ -->
     {% if user.is_authenticated %}
     <section id="team" class="services_team section-padding bg">
-      <div class="container">
+      <div id="coures" class="container">
        <p class="fs-1 fw-bold text-center">الدروس المتاحة</p>
        <p class="fs-1 fw-bold text-center"><img src="../static/images/book2.png" alt="" width="50px" height="50px"></p>
           <!--
@@ -342,6 +370,38 @@
   </footer>
 
      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+     <script>
+$('.navbar-nav .nav-link').click(function () {
+    $('.navbar-nav .nav-link').removeClass('active'); 
+    $(this).addClass('active'); 
+
+    $('.navbar-collapse').collapse('hide');
+});
+
+$(document).click(function (event) {
+    var clickOver = $(event.target);
+    var isNavbarOpen = $(".navbar-collapse").hasClass("show");
+
+    if (isNavbarOpen && !clickOver.closest('.navbar').length) {
+        $(".navbar-collapse").collapse('hide');
+    }
+});
+
+
+$(window).on('scroll', function () {
+    var position = $(this).scrollTop(); 
+    $('section').each(function () {
+        var target = $(this).offset().top - 100; 
+        var id = $(this).attr('id');
+        if (position >= target) {
+            $('.navbar-nav .nav-link').removeClass('active');
+            $('.navbar-nav .nav-link[href="#' + id + '"]').addClass('active');
+        }
+    });
+});
+
+     </script>
 </body>
 </html>
