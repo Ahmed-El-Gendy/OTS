@@ -31,26 +31,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Services</a>
               </li>
-              <li class="nav-item">
+               <li class="nav-item">
                   {% if user.is_authenticated %}
-                    <style>
-                        body {
-                            font-family: Arial, sans-serif;
-                            background-color: #f9f9f9;
-                            padding: 20px;
-                        }
-
-                        /* Profile button */
-                        .profile-button {
-                            background-color: #4CAF50; /* Green */
-                            color: white;
-                            padding: 10px 20px;
-                            border: none;
-                            border-radius: 4px;
-                            cursor: pointer;
-                            position: relative;
-                        }
-
+                     <style>
                         /* Dropdown menu */
                         .dropdown-menu {
                             display: none; /* Hidden by default */
@@ -75,12 +58,9 @@
                             background-color: #f1f1f1;
                         }
                     </style>
-                </head>
-                <body>
 
-                <!-- Profile Button -->
-                <div class="profile-container" style="position: relative;">
-                    <button class="profile-button" onclick="toggleDropdown()">{{ user.username }}</button>
+              
+                    <a class="nav-link"> <button class="profile-button" onclick="toggleDropdown()">{{ user.username }}</button></a>
                     <div class="dropdown-menu" id="dropdownMenu">
                         {% if manger %}
                             <a class="dropdown-item" href="{% url 'index' %}">Manager</a>
@@ -111,7 +91,7 @@
                   {% else %}
                       <a class="nav-link" href="{% url 'login' %}"><button type="button">Login</button></a>
                   {% endif %}
-              </li>
+              </li> 
             </ul>
           </div>
         </div>

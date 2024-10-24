@@ -79,15 +79,13 @@
                 <body>
 
                 <!-- Profile Button -->
-                <div class="profile-container" style="position: relative;">
-                    <button class="profile-button" onclick="toggleDropdown()">{{ user.username }}</button>
-                    <div class="dropdown-menu" id="dropdownMenu">
+                <a class="nav-link">  <button class="profile-button" onclick="toggleDropdown()">{{ user.username }}</button></a>
+                <div class="dropdown-menu" id="dropdownMenu">
                         {% if manger %}
                             <a class="dropdown-item" href="{% url 'index' %}">Manager</a>
                         {% endif %}
                         <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                     </div>
-                </div>
 
                 <script>
                     function toggleDropdown() {
